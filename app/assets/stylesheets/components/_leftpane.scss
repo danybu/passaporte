@@ -1,0 +1,54 @@
+
+.unidadePane {
+  height: 30vh;
+  min-height:250px;
+  background:$mainRed;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  font-weight:bold;
+  padding:1vh;
+
+  // align-items:center; 
+  color:rgb(245,245,245);
+  // font-family:"AauxNormal" !important;
+  .unidadeLabel, .genreLabel {
+    text-align:center;
+    margin: .2em;
+    font-size:26px;
+    font-family:"expressway";
+    letter-spacing:.1em;
+  }
+  .letterLabel {
+    font-size:30px;
+    text-transform:uppercase;
+    margin-left:2px;
+    position:relative;
+    top:.25em;
+  }
+  .unidLabel{
+    font-size:50px;
+  }
+  .genreLabel {
+    margin-top:1.2vh;
+    font-size:20px;
+  }
+  .starCircle {
+    flex:1 0 auto;
+    background: url(asset_path('stars'));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+}
+.navigationPane, .extraPane {
+  display:flex;
+  flex-direction:column;
+  text-align:right;
+  padding-right:1em;
+}
+
+

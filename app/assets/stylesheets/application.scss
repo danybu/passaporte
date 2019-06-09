@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  text-transform: uppercase;  
+}
+h2 {
+  text-transform: uppercase;
+  font-style:italic;
+}
+h3 {
+  font-family:"aaux_pro";
+  color:black;
+  margin-top:2vh;
+  margin-bottom:1.5vh;
+
+}
