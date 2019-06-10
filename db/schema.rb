@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_092542) do
+ActiveRecord::Schema.define(version: 2019_06_09_224042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "translations", force: :cascade do |t|
+    t.text "word_pt"
+    t.bigint "unidade_id"
+    t.text "transl_eng"
+    t.text "transl_germ"
+    t.text "transl_span"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unidade_id"], name: "index_translations_on_unidade_id"
+  end
+
+  create_table "unidades", force: :cascade do |t|
+    t.text "title"
+    t.integer "book"
+    t.integer "nr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
