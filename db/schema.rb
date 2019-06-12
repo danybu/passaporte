@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_12_191208) do
+ActiveRecord::Schema.define(version: 2019_06_12_192529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "languages", force: :cascade do |t|
+    t.text "code"
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.text "word_pt"
+    t.bigint "unidade_id"
+    t.text "transl_eng"
+    t.text "transl_ger"
+    t.text "transl_spa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unidade_id"], name: "index_translations_on_unidade_id"
+  end
+
+  create_table "unidades", force: :cascade do |t|
+    t.text "title"
+    t.text "book"
+    t.text "nr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +53,5 @@ ActiveRecord::Schema.define(version: 2019_06_12_191208) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "translations", "unidades"
 end
