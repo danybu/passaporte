@@ -1,0 +1,10 @@
+<div class="vocabContainer">
+  <div class="searchContainer">
+   <%= form_tag lookup_path, method: :get do %>
+    <%= text_field_tag :word_to_lookup %>
+   <%= submit_tag %>
+   <% end %>
+ </div>
+ <div class="resultsContainer">
+ </div>
+</div>

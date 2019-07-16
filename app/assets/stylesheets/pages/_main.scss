@@ -1,0 +1,49 @@
+$navbarBackground: red;
+
+.mainPage {
+  display:flex;
+}
+
+.leftPane {
+  width:15%;
+  min-width:250px;
+  // border:1px solid green;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:white;
+}
+
+.rightPane {
+  width:100%;
+}
+
+.navBar {
+  background: $navbarBackground;
+  color:white;
+  display:flex;
+  padding:1vh 1.5vw;
+  .titelbar {
+   display:flex;
+   justify-content:space-between;
+   // padding-left:1vh;
+   // padding-right:1vh;
+   align-items:center;
+ }
+ .separator {
+  padding-left:4vw;
+  padding-right:4vw;
+  font-size:30px;
+  font-weight:bold;
+}
+}
+
+.mainPane {
+    padding:1vh 1.5vw;
+    display:flex;
+}
+
+.contentPane {
+  flex:1 0 auto;
+}

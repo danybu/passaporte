@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_192529) do
 
   create_table "translations", force: :cascade do |t|
     t.text "word_pt"
+    t.text "genre_pt"
     t.bigint "unidade_id"
     t.text "transl_eng"
     t.text "transl_ger"
