@@ -93,24 +93,37 @@ def load_vocab_translations
     word_pt_split = Translation.split_article_front(word_pt_raw)
     word_pt = word_pt_split[:word]
     genre_pt = word_pt_split[:article]
-    puts "for word_pt_split: #{word_pt_split}"
+    # puts "for word_pt_split: #{word_pt_split}"
     passaporte_found = passaporte_unit?(word_pt_split)
-    puts "found?:"
-    puts passaporte_found
+    # puts "found?:"
+    # puts passaporte_found
     pt_translation = nil
     if !passaporte_found.nil?
       pt_transl = Translation.find_by word_pt:word_pt_split[:word], genre_pt:word_pt_split[:article]
-      puts pt_transl
+      # puts pt_transl
     end
-    puts "pt_transl:"
-    puts pt_transl
+    # puts "pt_transl:"
+    # puts pt_transl
     translation_array = ppnl_line["translations"]
-    save_nl_translation(word_pt, genre_pt,translation_array, ppnl_line["comments"])
+    save_nl_translation(word_pt, pt_transl, genre_pt,translation_array, ppnl_line["comments"])
   end
 end
 
-def save_nl_translation(word_pt, genre_pt, translation_array, comment)
-
+def save_nl_translation(word_pt, pt_translation, genre_pt, translation_array, comment)
+  nl = Language.where('code = ?', 'dut')[0]
+  unid_id = pt_translation&.unidade&.id || nil
+  UserTranslation.create!(
+    language:nl,
+    translation:pt_translation,
+    unidade_id:unid_id,
+    word_pt:word_pt,
+    genre_pt:genre_pt,
+    main_transl:translation_array[0],
+    alt_transl_1:translation_array[1],
+    alt_transl_2:translation_array[2],
+    alt_transl_3:translation_array[3],
+    comment:comment
+    )
 end
 
 def load_all_nl_files

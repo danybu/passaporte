@@ -425,7 +425,7 @@ preferir  18  to prefer
 preguiçoso  28  lazy  
 prenda, a  32  gift  
 preocupado  38 worried 
-preocupar-se  23  toeworry  
+preocupar-se  23  to worry  
 preparar  23  to prepare  
 presente, o  32  gift  
 presidente, o  AC  president  
@@ -955,7 +955,7 @@ inútil  32  useless
 Que inveja! 39  Lucky you! 
 inverno, o  28  winter  
 iogurte, o  17  yoghurt  
-ir  11  toego  
+ir  11  to go  
 irlandês  12  Irish  
 irmã, a  9  sister  
 irmão, o  9  brother  
@@ -1089,7 +1089,7 @@ décimo  6  tenth
 decoração, a  39  decoration 
 decorar 29 to decorate 
 dedo, o  34  finger, toe 
-deitar-se  14  toego to bed, to lie down  
+deitar-se  14  to go to bed, to lie down  
 deixar (algo/alguém)  20  to leave (something/somebody)  
 deixar (de fazer algo)  29  to stop (doing something)  
 dele/dela  5  his/her(s)  
